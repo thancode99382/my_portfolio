@@ -2,20 +2,39 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+
+html {
+
+  @apply 2xl:text-lg 3xl:text-2xl 4xl:text-4xl
+}
+
+
+
+*{
+  @apply outline-none focus:outline-none
+}
+
+
+.heading-01{
+
+  @apply font-bold text-4xl whitespace-nowrap lg:text-5xl lg:leading-normal tracking-wider
+}
+
+.p-light{
+  @apply text-light tracking-wide leading-loose 
+}
+
+.p-light2{
+  @apply text-light2 tracking-wide leading-loose 
 }
