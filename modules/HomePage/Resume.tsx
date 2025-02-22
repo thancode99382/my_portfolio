@@ -16,7 +16,7 @@ export const Resume = () => {
               <div className="flex flex-col gap-8 lg:gap-10">
                 <div>
                   <p className="p-light2">
-                    I have experience with Front End & Back End, I'm starting from
+                    I have experience with Front End & Back End, I am starting from
                     the backbone and now am using mostly with modern
                     frameworks like React, Express, Nestjs, Spring boot, Flutter
                   </p>

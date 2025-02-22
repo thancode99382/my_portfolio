@@ -71,7 +71,7 @@ const Page: React.FC<PageProps> = ({
         <link
           rel="preconnect"
           href="https://fonts.gstatic.com"
-          crossOrigin="true"
+          crossOrigin="anonymous"
         />
 <link rel="icon" type="image/x-icon" href="/images/logo.png"></link>
         <link

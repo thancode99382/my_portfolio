@@ -158,7 +158,7 @@ export const Projects = () => {
             >
               <div className="flex flex-col gap-16">
                 <p className="p-light2">
-                  A Collection of my favorites projects I've done recently
+                  A Collection of my favorites projects I have done recently
                 </p>
 
                 <div className={"flex flex-col gap-20"}>
