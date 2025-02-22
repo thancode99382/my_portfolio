@@ -1,28 +1,42 @@
 import Image from "next/image";
 import { FC } from "react";
+import { useEffect, useState } from "react";
+import { db, collection, getDocs } from "../../firebase/config"; // Adjust path as necessary
 
-const project_data: IProjectItemProps[] = [
-  {
-    image_url: "/images/Rectangle 12.png",
-    title: "Project 01 ",
-    preview_link:"https://doanwebexpress-abqiicrnd-thancode99382s-projects.vercel.app/",
-    github_link:"https://github.com/thancode99382",
-    date: "August",
-    desc: "  Chatify is the opensource larvel packageI found this package very useful and works very well but it does not have a group chat feature. So I added it. ",
-  },
+
+
+
+
+
+// const project_data: IProjectItemProps[] = [
+//   {
+//     image_url: "/images/Rectangle 12.png",
+//     title: "Project 01 ",
+//     preview_link:"https://doanwebexpress-abqiicrnd-thancode99382s-projects.vercel.app/",
+//     github_link:"https://github.com/thancode99382",
   
-];
+//     desc: "  Chatify is the opensource larvel packageI found this package very useful and works very well but it does not have a group chat feature. So I added it. ",
+//   },
+  
+// ];
 
 interface IProjectItemProps {
+  id?:string;
   image_url: string;
   title: string;
   preview_link?: string;
   github_link?: string;
-  date: string;
   desc: string;
 }
 
+
+
+
+
 const ProjectItem: FC<IProjectItemProps> = (props) => {
+
+
+
   return (
     <div
       className={"flex flex-col gap-6 lg:gap-10  lg:flex-row lg:items-center"}
@@ -33,16 +47,15 @@ const ProjectItem: FC<IProjectItemProps> = (props) => {
         }
       >
         <div className="group relative transition w-full block max-w-lg rounded-lg aspect-[3/2] overflow-hidden">
-          <Image
-            src={props.image_url}
-            alt="imgurl"
-            layout={"fill"}
-            objectPosition={"center"}
-            objectFit={"cover"}
-          />
+        <img
+  src={props.image_url}
+  alt="imgurl"
+  className="imgProject"
+  
+/>
         </div>
         <p className="text-lg font-medium tracking-wide lg:text-2xl lg:text-right">
-          {props.date}
+          {/* {props.date} */}
         </p>
       </div>
       <div className="flex flex-col gap-3">
@@ -53,9 +66,9 @@ const ProjectItem: FC<IProjectItemProps> = (props) => {
         <div className="text-sm leading-loose">
           {props.preview_link && (
             <div className={"flex gap-3"}>
-              <span>Link:</span>
+              <span><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 20 20" aria-hidden="true" className="inline text-indigo-300 size-4" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M12.586 4.586a2 2 0 112.828 2.828l-3 3a2 2 0 01-2.828 0 1 1 0 00-1.414 1.414 4 4 0 005.656 0l3-3a4 4 0 00-5.656-5.656l-1.5 1.5a1 1 0 101.414 1.414l1.5-1.5zm-5 5a2 2 0 012.828 0 1 1 0 101.414-1.414 4 4 0 00-5.656 0l-3 3a4 4 0 105.656 5.656l1.5-1.5a1 1 0 10-1.414-1.414l-1.5 1.5a2 2 0 11-2.828-2.828l3-3z" clip-rule="evenodd"></path></svg></span>
               <a
-                className={"hover:underline text-indigo-300 "}
+                className={"hover:underline text-indigo-300 text-sm "}
                 target={"_blank"}
                 href={props.preview_link}
               >
@@ -67,9 +80,9 @@ const ProjectItem: FC<IProjectItemProps> = (props) => {
 
           {props.github_link && (
             <div className={"flex gap-3"}>
-              <span>Link:</span>
+              <span><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 20 20" aria-hidden="true" className="inline text-indigo-300 size-4" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M12.586 4.586a2 2 0 112.828 2.828l-3 3a2 2 0 01-2.828 0 1 1 0 00-1.414 1.414 4 4 0 005.656 0l3-3a4 4 0 00-5.656-5.656l-1.5 1.5a1 1 0 101.414 1.414l1.5-1.5zm-5 5a2 2 0 012.828 0 1 1 0 101.414-1.414 4 4 0 00-5.656 0l-3 3a4 4 0 105.656 5.656l1.5-1.5a1 1 0 10-1.414-1.414l-1.5 1.5a2 2 0 11-2.828-2.828l3-3z" clip-rule="evenodd"></path></svg></span>
               <a
-                className={"hover:underline text-indigo-300 "}
+                className={"hover:underline text-indigo-300 text-sm "}
                 target={"_blank"}
                 href={props.github_link}
               >
@@ -87,8 +100,38 @@ const ProjectItem: FC<IProjectItemProps> = (props) => {
 };
 
 export const Projects = () => {
+
+
+  const [projects, setProjects] = useState<IProjectItemProps[]>([]);
+
+  useEffect(() => {
+    const fetchProjects = async () => {
+      try {
+        const querySnapshot = await getDocs(collection(db, "projects"));
+        const fetchedProjects = querySnapshot.docs.map((doc) => {
+          const data = doc.data();
+          // Ensure all required fields are extracted and correctly typed
+          return {
+            id: doc.id,
+            image_url: data.image_url || "", // Fallback value
+            title: data.title || "",
+            preview_link: data.preview_link || "",
+            github_link: data.github_link || "",
+            desc: data.desc || "", // Fallback value
+          };
+        });
+        setProjects(fetchedProjects);
+      } catch (error) {
+        console.error("Error fetching projects:", error);
+      }
+    };
+
+    fetchProjects();
+  }, []);
+
+
   return (
-    <section id={"about"} className="">
+    <section id={"Projects"} className="">
       <div className="container relative ">
         <div
           className={
@@ -119,8 +162,8 @@ export const Projects = () => {
                 </p>
 
                 <div className={"flex flex-col gap-20"}>
-                  {project_data.map((item, index) => (
-                    <ProjectItem {...item} key={index} />
+                  {projects.map((item, index) => (
+                    <ProjectItem  {...item} key={index} />
                   ))}
                 </div>
               </div>

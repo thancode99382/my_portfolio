@@ -32,38 +32,38 @@ const HeroContent = () => {
             
         </div>
       <div className="flex flex-col gap-6 lg:gap-8">
-        <h1 className="heading-01">Dong Dat</h1>
+        <h1 className="heading-01">Dat Dong</h1>
         <div className="flex flex-col gap-4">
           <p className="p-light2 lg:text-lg lg:leading-loose ">
             Web developer. I love building beautiful interfaces, web apps, and
             everything between!
           </p>
 
-          <p className="font-medium p-light lg:text-lg lg:leading-loose">
+          {/* <p className="font-medium p-light lg:text-lg lg:leading-loose">
             dongvandat9054@gmail.com
-          </p>
+          </p> */}
         </div>
 
         <ul className="flex gap-12 p-light2">
           <li className="text-indigo-300 transition hover:underline ">
-            <a href="zing.vn" target={"_blank"}>
+            <a href="https://www.youtube.com/@DatDong2003" target={"_blank"}>
               Youtube
             </a>
           </li>
           <li className="text-indigo-300 transition hover:underline ">
-            <a href="zing.vn" target={"_blank"}>
+            <a href="https://www.facebook.com/ongvanquocat/" target={"_blank"}>
               Facebook
             </a>
           </li>
           <li className="text-indigo-300 transition hover:underline ">
-            <a href="zing.vn" target={"_blank"}>
+            <a href="https://github.com/thancode99382" target={"_blank"}>
               Github
             </a>
           </li>
         </ul>
 
         <div className="flex gap-4 mt-4">
-          <Link href={"/#projects"}>
+          {/* <Link href={"/#projects"}>
             <div
               className={
                 "text-sm px-5 py-3 flex w-fit gap-2 items-center font-semibold rounded-full transition bg-primary hover:bg-primary2 "
@@ -89,7 +89,7 @@ const HeroContent = () => {
             
               <span>Contact</span>
             </div>
-          </Link>
+          </Link> */}
         </div>
       </div>
     </div>
@@ -98,7 +98,7 @@ const HeroContent = () => {
 
 export const Hero = () => {
   return (
-    <section id={"hero"} className={" overflow-hidden pt-16 "}>
+    <section id={"Home"} className={" overflow-hidden pt-16 "}>
       <div className="container relative">
       <div className="w-16 aspect-[27/22] absolute bottom-1/2 right-0 translate-y-1/2 -translate-x-1/3   ">
       <Image src={"/images/decors/decor dots.png"} alt={"dots"} layout={"fill"} />

@@ -17,6 +17,9 @@
 html {
 
   @apply 2xl:text-lg 3xl:text-2xl 4xl:text-4xl
+
+
+  
 }
 
 
@@ -41,7 +44,7 @@ html {
 
 .gradients-container {
   position: fixed;
-  filter: blur(200px) ;
+  filter: blur(100px) ;
   top: 0;
   left: 0;
   width: 100vw; /* Full width of viewport */
@@ -59,4 +62,14 @@ html {
   transition: opacity 0.3s ease; /* Smooth fade effect */
   pointer-events: none; /* Prevent blocking interactions */
   will-change: transform, opacity;
+}
+
+
+
+.imgProject{
+
+  object-position: center;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
 }

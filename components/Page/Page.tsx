@@ -26,8 +26,8 @@ const Page: React.FC<PageProps> = ({
       tgY = 0;
   
     const move = () => {
-      curX += (tgX - curX) * 0.1; // Smooth animation
-      curY += (tgY - curY) * 0.1;
+      curX += (tgX - curX) / 50; // Smooth animation
+      curY += (tgY - curY) / 50;
   
       interactive.style.transform = `translate3d(${curX}px, ${curY}px, 0)`;
       requestAnimationFrame(move);
@@ -73,6 +73,7 @@ const Page: React.FC<PageProps> = ({
           href="https://fonts.gstatic.com"
           crossOrigin="true"
         />
+<link rel="icon" type="image/x-icon" href="/images/logo.png"></link>
         <link
           href="https://fonts.googleapis.com/css2?family=Barlow:wght@100..900&family=DM+Sans:wght@100..1000&family=PT+Sans:wght@400;700&display=swap"
           rel="stylesheet"

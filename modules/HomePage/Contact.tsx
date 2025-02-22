@@ -47,7 +47,7 @@ placeholder={"Enter your message"} className={"form-input bg-transparent rounded
 export const Contact = () => {
   return (
 
-<section id={"experience"} className="">
+<section id={"Contact"} className="">
           <div className="container relative ">
             <div className="flex flex-col gap-6 border-t py-14 border-stone-800 ">
 
