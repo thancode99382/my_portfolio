@@ -88,7 +88,7 @@ const ProjectItem: FC<IProjectItemProps> = (props) => {
 
 export const Projects = () => {
   return (
-    <section id={"about"} className="bg-background2">
+    <section id={"about"} className="">
       <div className="container relative ">
         <div
           className={

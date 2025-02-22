@@ -5,8 +5,8 @@ const HeroImage = () => {
   return (
     <div className={"w-full relative  "}>
       <div className="relative block w-full max-w-md mx-auto lg:max-w-full lg:w-full aspect-square shrink-0">
-        <Image src={"/images/hero.png"} alt={"main hero"} layout={"fill"} />
-        <div className="hidden lg:block absolute h-full w-full scale-[2.1] translate-y-12 -translate-x-8 border border-stone-800 rounded-full  ">
+        <Image src={"/images/datdeptrai.jpg"} className= {" rounded-full "}  alt={"main hero"} layout={"fill"} />
+        <div className="absolute hidden w-full h-full scale-[1.45] translate-x-3 translate-y-4  border rounded-full lg:block border-stone-800 ">
             
             </div>
       </div>
@@ -22,7 +22,7 @@ const HeroContent = () => {
   return (
     <div
       className={
-        "bg-background lg:order-first py-8 lg:py-12 flex flex-col gap-8 xl:gap-10 relative lg:max-w-lg shrink-0   "
+        " lg:order-first py-8 lg:py-12 flex flex-col gap-8 xl:gap-10 relative lg:max-w-lg shrink-0   "
       }
     >
 
@@ -98,12 +98,12 @@ const HeroContent = () => {
 
 export const Hero = () => {
   return (
-    <section id={"hero"} className={" overflow-hidden pt-16"}>
+    <section id={"hero"} className={" overflow-hidden pt-16 "}>
       <div className="container relative">
       <div className="w-16 aspect-[27/22] absolute bottom-1/2 right-0 translate-y-1/2 -translate-x-1/3   ">
       <Image src={"/images/decors/decor dots.png"} alt={"dots"} layout={"fill"} />
       </div>
-      <div className="absolute left-0 w-10 translate-x-full translate-y-1/2  bottom-1/4 aspect-square">
+      <div className="absolute left-0 w-10 translate-x-full translate-y-1/2 bottom-1/4 aspect-square">
       <Image src={"/images/decors/decor plus.png"} alt={"plus"} layout={"fill"} />
       </div>
 

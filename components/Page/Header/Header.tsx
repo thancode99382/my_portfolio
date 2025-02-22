@@ -11,8 +11,8 @@ export const Header: FC = () => {
   const [showMenu, setShowMenu] = useState(false);
 
   return (
-    <header className={"fixed w-full z-50"}>
-      <nav className={"py-4 bg-background"}>
+    <header className={" w-full "}>
+      <nav className={"py-4 "}>
         <div className="container flex flex-wrap items-center justify-between mx-auto">
           {/* logo */}
           <Link href={"/"}>

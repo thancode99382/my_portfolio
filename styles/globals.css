@@ -38,3 +38,25 @@ html {
 .p-light2{
   @apply text-light2 tracking-wide leading-loose 
 }
+
+.gradients-container {
+  position: fixed;
+  filter: blur(200px) ;
+  top: 0;
+  left: 0;
+  width: 100vw; /* Full width of viewport */
+  height: 100vh; /* Full height of viewport */
+  pointer-events: none; /* Allows mouse interactions to pass through */
+}
+
+.interactive {
+  position: absolute;
+  background: radial-gradient(circle at center, rgba(140, 100, 255, 0.8), rgba(140, 100, 255, 0) 50%) no-repeat;
+  mix-blend-mode: var(--blending);
+  width: 1000px; /* Fixed size to calculate offset */
+  height: 1000px;
+  opacity: 0; /* Start hidden */
+  transition: opacity 0.3s ease; /* Smooth fade effect */
+  pointer-events: none; /* Prevent blocking interactions */
+  will-change: transform, opacity;
+}

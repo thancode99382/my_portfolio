@@ -3,7 +3,14 @@ return (
     <section id={"experience"} className="bg-background2">
           <div className="container relative ">
             <div className="flex flex-col gap-6 border-t py-14 border-stone-800 ">
-              <div className="flex flex-col gap-6">
+
+                <div>
+                      <h2 className="heading-01 "> Work History</h2>
+                </div>
+
+
+              {/* .lg:grid.lg:grid-cols-12 */}
+              {/* <div className="flex flex-col gap-6">
                 <div>
                      <h2 className="heading-01">About Me</h2>
                 </div>
@@ -17,7 +24,7 @@ return (
                   
                   
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </section>

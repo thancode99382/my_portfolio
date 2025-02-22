@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export const Resume = () => {
   return (
-    <section id={"about"} className="bg-background2">
+    <section id={"about"} className="">
       <div className="container relative ">
         <div className="flex flex-col gap-6 py-14 lg:flex-row lg:gap-8 ">
           <div className="flex flex-col gap-6">
