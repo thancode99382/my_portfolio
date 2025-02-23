@@ -86,7 +86,7 @@ const Page: React.FC<PageProps> = ({
             everything between!" />
         <meta property="og:image" content="/images/myui.png" />
         <meta property="og:url" content="https://i.pinimg.com/736x/a8/ed/4f/a8ed4fe991863e646e31cfe112f2cbaf.jpg" />
-
+        <meta name="keywords" content="Dat Dong, web developer, portfolio, full-stack, UI/UX, JavaScript, React, Spring Boot" />
       </Head>
 
       <Header />
