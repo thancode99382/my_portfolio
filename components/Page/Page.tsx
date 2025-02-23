@@ -79,6 +79,13 @@ const Page: React.FC<PageProps> = ({
           rel="stylesheet"
         />
         <title>{title}</title>
+
+        <meta name="description" content="Portfolio application show me" />
+        <meta property="og:title" content="My portfolio" />
+        <meta property="og:description" content="An amazing portfolio app" />
+        <meta property="og:image" content="/images/myui.png" />
+        <meta property="og:url" content="https://i.pinimg.com/736x/a8/ed/4f/a8ed4fe991863e646e31cfe112f2cbaf.jpg" />
+
       </Head>
 
       <Header />
